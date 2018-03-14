@@ -14,10 +14,13 @@ public:
 	void SetNote(CNote *note);
 	CPiano *CreateInstrument();
 
-	std::vector<string> GetFiles();
-	bool LoadFile(const char *filename);
+	void GetFiles();
+	bool LoadFile();
 
 private:
+	// all piano samples
 	std::vector<short> m_piano;
+	// vector contains all piano sample filename
+	std::vector<CString> files;
 };
 

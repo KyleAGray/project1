@@ -25,9 +25,8 @@ CPiano *CPianoFactory::CreateInstrument()
 	return instrument;
 }
 
-std::vector<string> CPianoFactory::GetFiles()
+void CPianoFactory::GetFiles()
 {
-	vector<string> files;
 	namespace stdfs = std::experimental::filesystem;
 	const stdfs::directory_iterator end{};
 	std::experimental::filesystem::path path = "CompletePiano";
@@ -35,32 +34,38 @@ std::vector<string> CPianoFactory::GetFiles()
 	for (stdfs::directory_iterator iter(path); iter != end; ++iter)
 	{
 		if (stdfs::is_regular_file(*iter)) 
-			files.push_back(iter->path().string());
+			files.push_back(iter->path().c_str());
 	}
-	return files;
 }
 
-bool CPianoFactory::LoadFile(const char * filename)
+bool CPianoFactory::LoadFile()
 {
 	m_piano.clear();
 	
 	CDirSoundSource m_file;
-	if (!m_file.Open(filename))
-	{
-		CString msg = L"Unable to open audio file: ";
-		msg += filename;
-		AfxMessageBox(msg);
-		return false;
-	}
+	GetFiles();
 
-	for (int i = 0; i<m_file.NumSampleFrames(); i++)
+	for (auto filename:files)
 	{
-		short frame[2];
-		m_file.ReadFrame(frame);
-		m_piano.push_back(frame[0]);
-	}
+		if (!m_file.Open(filename))
+		{
+			CString msg = L"Unable to open audio file: ";
+			msg += filename;
+			AfxMessageBox(msg);
+			return false;
+		}
 
-	m_file.Close();
+		for (int i = 0; i<m_file.NumSampleFrames(); i++)
+		{
+			short frame[2];
+			m_file.ReadFrame(frame);
+			// Load all piano sample into wavetable
+			m_piano.push_back(frame[0]);
+		}
+
+		m_file.Close();
+	}
+	
 	return true;
 }
 
