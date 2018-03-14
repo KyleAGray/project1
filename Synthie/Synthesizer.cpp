@@ -16,7 +16,7 @@ CSynthesizer::CSynthesizer()
 	m_samplePeriod = 1 / m_sampleRate;
 
 	/// Load all piano samples to the file
-	//m_pianofactory.LoadFile("A0#l");
+	m_pianofactory.LoadFile("A0#l.wav");
 }
 
 

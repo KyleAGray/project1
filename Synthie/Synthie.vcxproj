@@ -192,9 +192,6 @@
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <Media Include="CompletePiano\A0#l.wav" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

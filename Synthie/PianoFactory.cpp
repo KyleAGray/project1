@@ -26,7 +26,7 @@ CPiano *CPianoFactory::CreateInstrument()
 bool CPianoFactory::LoadFile(const char * filename)
 {
 	m_piano.clear();
-
+	
 	CDirSoundSource m_file;
 	if (!m_file.Open(filename))
 	{

@@ -187,9 +187,4 @@
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Media Include="CompletePiano\A0#l.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
-  </ItemGroup>
 </Project>
