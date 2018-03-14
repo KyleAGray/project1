@@ -7,8 +7,6 @@
 #include <algorithm>
 #include <cmath>
 
-
-
 CSynthesizer::CSynthesizer()
 {
 	CoInitialize(NULL);
@@ -16,6 +14,9 @@ CSynthesizer::CSynthesizer()
 	m_channels = 2;
 	m_sampleRate = 44100.;
 	m_samplePeriod = 1 / m_sampleRate;
+
+	/// Load all piano samples to the file
+	m_pianofactory.LoadFile();
 }
 
 
@@ -65,6 +66,12 @@ bool CSynthesizer::Generate(double * frame)
 		if (note->Instrument() == L"ToneInstrument")
 		{
 			instrument = new CToneInstrument();
+		}
+		// Create the piano instrument
+		else if (note->Instrument() == L"Piano")
+		{
+			m_pianofactory.SetNote(note);
+			instrument = m_pianofactory.CreateInstrument();
 		}
 
 		/// TODO
