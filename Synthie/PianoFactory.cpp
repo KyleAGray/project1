@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "PianoFactory.h"
 #include "audio/DirSoundSource.h"
+#include <filesystem>
+namespace fs = std::experimental::filesystem;
 
 CPianoFactory::CPianoFactory()
 {
@@ -21,6 +23,21 @@ CPiano *CPianoFactory::CreateInstrument()
 	instrument->GetPlayer()->SetSamples(&m_piano[0], (int)m_piano.size());
 
 	return instrument;
+}
+
+std::vector<string> CPianoFactory::GetFiles()
+{
+	vector<string> files;
+	namespace stdfs = std::experimental::filesystem;
+	const stdfs::directory_iterator end{};
+	std::experimental::filesystem::path path = "CompletePiano";
+
+	for (stdfs::directory_iterator iter(path); iter != end; ++iter)
+	{
+		if (stdfs::is_regular_file(*iter)) 
+			files.push_back(iter->path().string());
+	}
+	return files;
 }
 
 bool CPianoFactory::LoadFile(const char * filename)
