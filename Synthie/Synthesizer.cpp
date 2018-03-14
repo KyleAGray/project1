@@ -67,6 +67,9 @@ bool CSynthesizer::Generate(double * frame)
 			instrument = new CToneInstrument();
 		}
 
+		/// TODO
+		/// check if not is each of the effects
+
 		// Configure the instrument object
 		if (instrument != NULL)
 		{
@@ -118,7 +121,7 @@ bool CSynthesizer::Generate(double * frame)
 			// to the frame.
 			for (int c = 0; c < GetNumChannels(); c++)
 			{
-				frame[c] += instrument->Frame(c);
+				frame[c] += instrument->Frame(c);	///TODO send
 			}
 		}
 		else
@@ -132,6 +135,12 @@ bool CSynthesizer::Generate(double * frame)
 		// Move to the next instrument in the list
 		node = next;
 	}
+
+
+	//
+	// Phase 3-2: Effects
+	//
+
 
 	//
 	// Phase 4: Advance the time and beats
