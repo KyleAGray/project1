@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <cmath>
 
+
+
 CSynthesizer::CSynthesizer()
 {
 	CoInitialize(NULL);
@@ -95,11 +97,15 @@ bool CSynthesizer::Generate(double * frame)
 	//
 	// Phase 2: Clear all channels to silence 
 	//
-
-	for (int c = 0; c < GetNumChannels(); c++)
+	double channelFrames[NUMEFFECTCHANNELS][2];
+	for (int i = 0; i < NUMEFFECTCHANNELS; i++)
 	{
-		frame[c] = 0;
+		for (int c = 0; c < GetNumChannels(); c++)
+		{
+			channelFrames[i][c] = 0;
+		}
 	}
+
 
 	//
 	// Phase 3: Play an active instruments
@@ -127,10 +133,14 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			// If we returned true, we have a valid sample.  Add it 
 			// to the frame.
-			for (int c = 0; c < GetNumChannels(); c++)
+			for (int i = 0; i < NUMEFFECTCHANNELS; i++)
 			{
-				frame[c] += instrument->Frame(c);	///TODO send
+				for (int c = 0; c < GetNumChannels(); c++)
+				{
+					channelFrames[i][c] += instrument->Frame(c) * instrument ->Send(i);	///TODO send
+				}
 			}
+
 		}
 		else
 		{
@@ -148,8 +158,13 @@ bool CSynthesizer::Generate(double * frame)
 	//
 	// Phase 3-2: Effects
 	//
+	double gateframe[2];
+	m_gate.Process(gateframe, channelFrames[1]);
 
-
+	for (int c = 0; c < 2; c++)
+	{
+		frame[c] += gateframe[c] + channelFrames[0][c];
+	}
 	//
 	// Phase 4: Advance the time and beats
 	//
@@ -304,6 +319,7 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 	long len;
 	attributes->get_length(&len);
 
+	double effects[NUMEFFECTCHANNELS] = { 1,0 };
 	// Loop over the list of attributes
 	for (int i = 0; i<len; i++)
 	{
@@ -323,8 +339,18 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 		{
 			instrument = value.bstrVal;
 		}
+		else if (name == "dry")
+		{
+			effects[0] = value.dblVal;
+		}
+		else if (name == "gateing")
+		{
+			effects[1] = value.dblVal;
+		}
+		
 	}
 
+	SetEffects(instrument, effects);
 
 	CComPtr<IXMLDOMNode> node;
 	xml->get_firstChild(&node);
@@ -338,6 +364,7 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 		{
 			XmlLoadNote(node, instrument);
 		}
+
 	}
 
 }
@@ -346,4 +373,19 @@ void CSynthesizer::XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument)
 {
 	m_notes.push_back(CNote());
 	m_notes.back().XmlLoad(xml, instrument);
+}
+
+void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
+{
+	if (instrument == L"Piano")
+	{
+		m_pianofactory.SetDry(effects[0]);
+		m_pianofactory.SetGateing(effects[1]);
+		// effect 2
+		// effect 3
+		// effect 4
+
+	}
+
+	/// TODO: ADD DRUM CAPABILITY
 }

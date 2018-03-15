@@ -4,6 +4,8 @@
 
 CInstrument::CInstrument()
 {
+	sends[0] = 1;	// Normal
+	sends[1] = 0;	// Grating (gating)
 }
 
 

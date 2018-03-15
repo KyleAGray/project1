@@ -7,7 +7,7 @@ public:
 	CEffectNoisGrate();
 	virtual ~CEffectNoisGrate();
 
-	virtual void Process(double *frame);
+	virtual void Process(double *frame, double *eframe) override;
 
 private:
 	/// The threshold for allowing a sound to pass through

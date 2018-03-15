@@ -22,6 +22,10 @@ CPiano *CPianoFactory::CreateInstrument()
 	CPiano *instrument = new CPiano();
 	instrument->GetPlayer()->SetSamples(&m_piano[0], (int)m_piano.size());
 
+	// Set Effect values
+	instrument->SetSend(0, m_dry);
+	instrument->SetSend(1, m_gateing);
+
 	return instrument;
 }
 

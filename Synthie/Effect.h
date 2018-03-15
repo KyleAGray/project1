@@ -5,7 +5,7 @@ public:
 	CEffect();
 	virtual ~CEffect();
 
-	virtual void Process(double *frame) = 0;
+	virtual void Process(double *frame, double *eframe) = 0;
 
 };
 
