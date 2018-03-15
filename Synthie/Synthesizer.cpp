@@ -3,6 +3,7 @@
 #include "ToneInstrument.h"
 #include "msxml2.h"
 #include "xmlhelp.h"
+#include "EffectNoisGrate.h"
 
 #include <algorithm>
 #include <cmath>
