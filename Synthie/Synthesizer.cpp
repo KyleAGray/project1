@@ -6,7 +6,7 @@
 #include "EffectNoisGrate.h"
 #include "DrumInstrument.h"
 #include "DrumFactory.h"
-
+#include "CAdditive.h"
 #include <algorithm>
 #include <cmath>
 
@@ -100,6 +100,10 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			m_drumfactory.SetNote(note);
 			instrument = m_drumfactory.CreateInstrument();
+		}
+		else if (note->Instrument() == L"Additive")
+		{
+			instrument = new CAdditive();
 		}
 
 		/// TODO
