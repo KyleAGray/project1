@@ -132,6 +132,8 @@
     <ClCompile Include="audio\DirSound.cpp" />
     <ClCompile Include="audio\DirSoundSource.cpp" />
     <ClCompile Include="audio\DirSoundStream.cpp" />
+    <ClCompile Include="CAdditive.cpp" />
+    <ClCompile Include="CSineWaveHarmonics.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
     <ClCompile Include="Instrument.cpp" />
@@ -163,6 +165,8 @@
     <ClInclude Include="audio\DirSound.h" />
     <ClInclude Include="audio\DirSoundSource.h" />
     <ClInclude Include="audio\DirSoundStream.h" />
+    <ClInclude Include="CAdditive.h" />
+    <ClInclude Include="CSineWaveHarmonics.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectNoisGrate.h" />
     <ClInclude Include="Instrument.h" />
