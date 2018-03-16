@@ -102,6 +102,12 @@
     <ClCompile Include="Drums.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CAdditive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSineWaveHarmonics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -198,6 +204,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Drums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CAdditive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSineWaveHarmonics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
