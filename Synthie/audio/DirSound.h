@@ -34,3 +34,4 @@ private:
 };
 
 #endif // !defined(AFX_DIRSOUND_H__8D413D16_CE21_45B0_9542_DE158E978D38__INCLUDED_)
+ 
