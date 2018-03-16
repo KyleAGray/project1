@@ -11,6 +11,7 @@ CDrumFactory::CDrumFactory()
 		m_drum.push_back(v);
 	}
 	kit = 1;
+	filt = 1;
 }
 
 
@@ -22,6 +23,7 @@ CDrumInstrument *CDrumFactory::CreateInstrument() {
 	CDrumInstrument *instrument = new CDrumInstrument();
 
 	instrument->SetKit(kit);
+	instrument->SetFilt(filt);
 	instrument->GetPlayer()->SetSamples(&m_drum[kit][0], (int)m_drum[kit].size());
 	
 
@@ -59,6 +61,11 @@ void CDrumFactory::SetNote(CNote* note)
 			value.ChangeType(VT_R8);
 			int b = int(value.dblVal + 0.4);
 			kit = b;
+		}
+		else if (name == "filt")
+		{
+			value.ChangeType(VT_R8);
+			filt = value.dblVal;
 		}
 	}
 }

@@ -21,6 +21,7 @@ private:
 	vector<vector<short>> m_drum;
 	vector<short> v;
 	int kit;
+	double filt;
 
 	double m_dry = 1;
 	double m_gateing = 0;

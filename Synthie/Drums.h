@@ -19,7 +19,9 @@ public:
 	void SetAmplitude(int i, double a) { m_amp = a; }
 	double white_noise();
 	void SetKit(int i) { kit = i; }
+	void SetFilt(double i) { filt = i; }
 	int GetKit() { return kit; }
+	double GetFilt() { return filt; }
 
 private:
 	double m_freq;
@@ -27,5 +29,6 @@ private:
 	double m_amp;
 	int kit;
 	int time;
+	double filt;
 	vector<double> v;
 };

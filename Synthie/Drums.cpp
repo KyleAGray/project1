@@ -10,6 +10,7 @@ CDrums::CDrums(void)
 	kit = 1;
 	time = 0;
 	v.resize(3);
+	filt = 1;
 }
 
 CDrums::~CDrums(void)
