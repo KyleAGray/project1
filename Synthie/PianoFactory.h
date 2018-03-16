@@ -20,9 +20,11 @@ public:
 	void SetGateing(double g) { m_gateing = g; }
 private:
 	// all piano samples
-	std::vector<short> m_piano;
+	std::vector<short> m_pianosamples;
 	// vector contains all piano sample filename
 	std::vector<CString> files;
+	// the piano object
+	CPiano m_piano;
 
 	double m_dry = 1;
 	double m_gateing = 0;

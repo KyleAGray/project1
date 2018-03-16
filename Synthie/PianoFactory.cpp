@@ -11,7 +11,7 @@ CPianoFactory::CPianoFactory()
 		m_pianosamples.push_back(short(3267 * sin(2 * 3.1415 * 1000 * time)));
 	}
 
-	m_power = 1;
+	//m_power = 1;
 }
 
 
@@ -23,7 +23,7 @@ CPiano *CPianoFactory::CreateInstrument()
 {
 	CPiano *instrument = new CPiano();
 	instrument->GetPlayer()->SetSamples(&m_pianosamples[0], (int)m_pianosamples.size());
-	instrument->GetPlayer()->SetPower(m_power);
+	//instrument->GetPlayer()->SetPower(m_power);
 
 	// Set Effect values
 	instrument->SetSend(0, m_dry);
