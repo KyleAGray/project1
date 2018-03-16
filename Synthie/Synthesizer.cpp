@@ -23,23 +23,23 @@ CSynthesizer::CSynthesizer()
 	/// Load all piano samples to the file
 	m_pianofactory.LoadFile();
 
-	m_drumfactory.LoadFile("step_snare.wav", 3);
-	m_drumfactory.LoadFile("alien_hihats_01.wav", 4);
-	m_drumfactory.LoadFile("alien_hihats_02.wav", 5);
-	m_drumfactory.LoadFile("alien_hihats_03.wav", 6);
-	m_drumfactory.LoadFile("alien_hihats_04.wav", 7);
-	m_drumfactory.LoadFile("alien_hihats_05.wav", 8);
-	m_drumfactory.LoadFile("alien_hihats_06.wav", 9);
-	m_drumfactory.LoadFile("alien_hihats_07.wav", 10);
-	m_drumfactory.LoadFile("dirty_snare01.wav", 11);
-	m_drumfactory.LoadFile("dirty_snare02.wav", 12);
-	m_drumfactory.LoadFile("dirty_snare03.wav", 13);
-	m_drumfactory.LoadFile("jp_deep_bass_06.wav", 14);
-	m_drumfactory.LoadFile("perturbed_hit01.wav", 15);
-	m_drumfactory.LoadFile("V_04Floor_tom.wav", 16);
-	m_drumfactory.LoadFile("V_08Floor_tom.wav", 17);
-	m_drumfactory.LoadFile("V28_loose_skin.wav", 18);
-	m_drumfactory.LoadFile("V55_loose_skin.wav", 19);
+	m_drumfactory.LoadFile("Drums/step_snare.wav", 3);
+	m_drumfactory.LoadFile("Drums/alien_hihats_01.wav", 4);
+	m_drumfactory.LoadFile("Drums/alien_hihats_02.wav", 5);
+	m_drumfactory.LoadFile("Drums/alien_hihats_03.wav", 6);
+	m_drumfactory.LoadFile("Drums/alien_hihats_04.wav", 7);
+	m_drumfactory.LoadFile("Drums/alien_hihats_05.wav", 8);
+	m_drumfactory.LoadFile("Drums/alien_hihats_06.wav", 9);
+	m_drumfactory.LoadFile("Drums/alien_hihats_07.wav", 10);
+	m_drumfactory.LoadFile("Drums/dirty_snare01.wav", 11);
+	m_drumfactory.LoadFile("Drums/dirty_snare02.wav", 12);
+	m_drumfactory.LoadFile("Drums/dirty_snare03.wav", 13);
+	m_drumfactory.LoadFile("Drums/jp_deep_bass_06.wav", 14);
+	m_drumfactory.LoadFile("Drums/perturbed_hit01.wav", 15);
+	m_drumfactory.LoadFile("Drums/V_04Floor_tom.wav", 16);
+	m_drumfactory.LoadFile("Drums/V_08Floor_tom.wav", 17);
+	m_drumfactory.LoadFile("Drums/V28_loose_skin.wav", 18);
+	m_drumfactory.LoadFile("Drums/V55_loose_skin.wav", 19);
 }
 
 
