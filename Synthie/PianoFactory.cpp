@@ -36,7 +36,7 @@ void CPianoFactory::GetFiles()
 {
 	namespace stdfs = std::experimental::filesystem;
 	const stdfs::directory_iterator end{};
-	std::experimental::filesystem::path path = "Piano";
+	std::experimental::filesystem::path path = "Piano3";
 
 	for (stdfs::directory_iterator iter(path); iter != end; ++iter)
 	{
