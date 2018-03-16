@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<score bpm="60" beatspermeasure="4">
+<score bpm="120" beatspermeasure="2">
 	<instrument instrument="Piano">
 		<note measure="1" beat="1" duration="0.5" note="1"/>
           	<note measure="2" beat="1" duration="0.5" note="11"/>

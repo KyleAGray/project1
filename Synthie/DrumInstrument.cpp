@@ -22,6 +22,7 @@ void CDrumInstrument::Start()
 	m_sines.SetSampleRate(GetSampleRate());
 	m_sines.Start();
 	m_drumPlayer.Start();
+	v.resize(3);
 	//m_ar.SetSource(&m_sines);
 }
 
@@ -65,6 +66,11 @@ void CDrumInstrument::SetNote(CNote *note)
 			int b = int(value.dblVal + 0.4);
 			m_sines.SetKit(b);
 		}
+		else if (name == "filt")
+		{
+			value.ChangeType(VT_R8);
+			m_sines.SetFilt(value.dblVal);
+		}
 		/*else if (name == "attack")
 		{
 			value.ChangeType(VT_R8);
@@ -100,8 +106,26 @@ bool CDrumInstrument::Generate()
 	else {
 		bool valid = m_drumPlayer.Generate();
 
-		m_frame[0] = m_drumPlayer.Frame(0);
-		m_frame[1] = m_frame[0];
+		if(m_sines.GetFilt() < 1){
+			double B = 0.01;
+			double f = m_sines.GetFilt();
+			double R = 1 - B / 2;
+			double theta = 2 * R * cos(2 * PI * f) / (1 + R * R);
+			double A = (1 - R * R) * sqrt(1 - theta * theta);
+			A = A * 10;
+
+
+			m_frame[0] = A * m_drumPlayer.Frame(0) + (2 * R * theta) * v[2] - R * R * v[1];
+			m_frame[1] = m_frame[0];
+
+			v[0] = v[1];
+			v[1] = v[2];
+			v[2] = m_frame[0];
+		}
+		else {
+			m_frame[0] = m_drumPlayer.Frame(0);
+			m_frame[1] = m_frame[0];
+		}
 
 		return valid;
 	}

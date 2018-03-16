@@ -161,6 +161,7 @@
     <ClCompile Include="audio\WaveformBuffer.cpp" />
     <ClCompile Include="audio\WaveformWnd.cpp" />
     <ClCompile Include="ToneInstrument.cpp" />
+    <ClCompile Include="ToneInstrumentFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\xmlhelp.h" />
@@ -197,6 +198,7 @@
     <ClInclude Include="audio\WaveformBuffer.h" />
     <ClInclude Include="audio\WaveformWnd.h" />
     <ClInclude Include="ToneInstrument.h" />
+    <ClInclude Include="ToneInstrumentFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Synthie.ico" />
