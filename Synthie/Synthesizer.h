@@ -5,6 +5,7 @@
 #include "Note.h"
 #include "PianoFactory.h"
 #include "EffectNoisGrate.h"
+#include "DrumFactory.h"
 
 using namespace std;
 
@@ -76,5 +77,6 @@ private:
 
 	/// Instrument Facotries
 	CPianoFactory m_pianofactory;
+	CDrumFactory m_drumfactory;
 };
 
