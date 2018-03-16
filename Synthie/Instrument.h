@@ -2,7 +2,7 @@
 #include "AudioNode.h"
 #include "Note.h"
 
-const int NUMEFFECTCHANNELS = 1;	// The number of effects channels including one with no effect added
+const int NUMEFFECTCHANNELS = 2;	// The number of effects channels including one with no effect added
 class CInstrument :
 	public CAudioNode
 {
@@ -12,8 +12,9 @@ public:
 
 	virtual void SetNote(CNote *note) = 0;
 
-	double Sent(int i) { return sends[i]; }
+	double Send(int i) { return sends[i]; }
 
+	void SetSend(int i, double ammount) { sends[i] = ammount; }
 private:
 	/// List of send ammounts for each effect
 	double sends[NUMEFFECTCHANNELS];	

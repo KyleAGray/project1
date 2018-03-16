@@ -4,8 +4,15 @@
 #include "Instrument.h"
 #include "Note.h"
 #include "PianoFactory.h"
+#include "EffectNoisGrate.h"
 
 using namespace std;
+
+// Effect Channels
+// 0 -> no effect
+// 1 -> grating (actually gating but I can't spell)
+//const int NUMEFFECTCHANNELS = 2;
+
 class CSynthesizer
 {
 public:
@@ -58,10 +65,14 @@ private:
 	void XmlLoadScore(IXMLDOMNode * xml);
 	void XmlLoadInstrument(IXMLDOMNode * xml);
 	void XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument);
+	void SetEffects(std::wstring & instrument, double * effects);
 
 	int m_currentNote;          //!< The current note we are playing
 	int m_measure;              //!< The current measure
 	double m_beat;              //!< The current beat within the measure
+
+	/// Gate effect
+	CEffectNoisGrate m_gate;
 
 	/// Instrument Facotries
 	CPianoFactory m_pianofactory;

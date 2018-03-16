@@ -16,14 +16,18 @@ public:
 
 	void GetFiles();
 	bool LoadFile();
-
+	void SetDry(double d) { m_dry = d; }
+	void SetGateing(double g) { m_gateing = g; }
 private:
-	CPiano * m_piano;
 	// all piano samples
-	std::vector<short> m_pianosamples;
+	std::vector<short> m_piano;
 	// vector contains all piano sample filename
 	std::vector<CString> files;
-	// how hard to press the key
-	double m_power;
+
+	double m_dry = 1;
+	double m_gateing = 0;
+	// effect 2
+	// effect 3
+	// effect 4
 };
 
