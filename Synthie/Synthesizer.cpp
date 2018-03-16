@@ -88,7 +88,8 @@ bool CSynthesizer::Generate(double * frame)
 		CInstrument *instrument = NULL;
 		if (note->Instrument() == L"ToneInstrument")
 		{
-			instrument = new CToneInstrument();
+			//instrument = new CToneInstrument();
+			instrument = m_tonefactory.CreateInstrument();
 		}
 		// Create the piano instrument
 		else if (note->Instrument() == L"Piano")
@@ -167,7 +168,7 @@ bool CSynthesizer::Generate(double * frame)
 			{
 				for (int c = 0; c < GetNumChannels(); c++)
 				{
-					channelFrames[i][c] += instrument->Frame(c) * instrument ->Send(i);	///TODO send
+					channelFrames[i][c] += instrument->Frame(c) *instrument->Send(i);	///TODO send
 				}
 			}
 
@@ -371,10 +372,12 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 		}
 		else if (name == "dry")
 		{
+			value.ChangeType(VT_R8);
 			effects[0] = value.dblVal;
 		}
 		else if (name == "gateing")
 		{
+			value.ChangeType(VT_R8);
 			effects[1] = value.dblVal;
 		}
 		
@@ -416,6 +419,15 @@ void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 		// effect 4
 
 	}
-
+	else if (instrument == L"DrumInstrument")
+	{
+		m_drumfactory.SetDry(effects[0]);
+		m_drumfactory.SetGateing(effects[1]);
+	}
+	else if (instrument == L"ToneInstrument")
+	{
+		m_tonefactory.SetDry(effects[0]);
+		m_tonefactory.SetGateing(effects[1]);
+	}
 	/// TODO: ADD DRUM CAPABILITY
 }

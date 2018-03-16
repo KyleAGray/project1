@@ -15,15 +15,17 @@ CEffectNoisGrate::~CEffectNoisGrate()
 // Takes in stereo sound frame array 
 void CEffectNoisGrate::Process(double * frame, double * eframe)
 {
-	if (eframe[0] < 100)
+	
+	if (eframe[0] < 0.3)
 	{
 		eframe[0] = 0;
 	}
-	if (eframe[1] < 100)
+	if (eframe[1] < 0.3)
 	{
 		eframe[1] = 0;
 	}
 
 	frame[0] = eframe[0];
 	frame[1] = eframe[1];
+	
 }

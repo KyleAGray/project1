@@ -25,6 +25,11 @@ CDrumInstrument *CDrumFactory::CreateInstrument() {
 	instrument->SetKit(kit);
 	instrument->SetFilt(filt);
 	instrument->GetPlayer()->SetSamples(&m_drum[kit][0], (int)m_drum[kit].size());
+	
+
+	// Set Effect values
+	instrument->SetSend(0, m_dry);
+	instrument->SetSend(1, m_gateing);
 
 	return instrument;
 }
