@@ -1,5 +1,7 @@
 #pragma once
 #include "AudioNode.h"
+#include <vector>
+using namespace std;
 
 class CDrumPlayer :
 	public CAudioNode

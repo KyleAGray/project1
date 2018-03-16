@@ -19,6 +19,7 @@ public:
 	void SetDuration(double d) { m_duration = d; }
 	void SetFreq(double f) { m_sines.SetFreq(f); }
 	void SetKit(int i) { m_sines.SetKit(i); }
+	void SetFilt(double i) { m_sines.SetFilt(i); }
 
 	CDrumPlayer *GetPlayer() { return &m_drumPlayer; }
 
@@ -28,4 +29,5 @@ private:
 	double		m_time;
 	CDrums		m_sines;
 	double		m_duration;
+	vector<double> v;
 };

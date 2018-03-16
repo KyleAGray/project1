@@ -18,5 +18,6 @@ private:
 	vector<vector<short>> m_drum;
 	vector<short> v;
 	int kit;
+	double filt;
 };
 
