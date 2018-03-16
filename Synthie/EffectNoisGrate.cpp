@@ -16,14 +16,14 @@ CEffectNoisGrate::~CEffectNoisGrate()
 void CEffectNoisGrate::Process(double * frame, double * eframe)
 {
 	
-	if (eframe[0] < 50)
+	if (eframe[0] < 0.003)
 	{
 		frame[0] = 0;
 	}
 	else {
 		frame[0] = eframe[0];
 	}
-	if (eframe[1] < 50)
+	if (eframe[1] < 0.003)
 	{
 		frame[1] = 0;
 	}
@@ -31,7 +31,6 @@ void CEffectNoisGrate::Process(double * frame, double * eframe)
 		frame[1] = eframe[1];
 	}
 
-	frame[0] = eframe[0];
-	frame[1] = eframe[1];
 	
 }
+ 
