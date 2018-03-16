@@ -106,7 +106,7 @@ bool CDrumInstrument::Generate()
 	else {
 		bool valid = m_drumPlayer.Generate();
 
-		if(m_sines.GetFilt() != 1){
+		if(m_sines.GetFilt() < 1){
 			double B = 0.01;
 			double f = m_sines.GetFilt();
 			double R = 1 - B / 2;
