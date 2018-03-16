@@ -6,6 +6,7 @@ CPianoPlayer::CPianoPlayer()
 {
 	m_samples = NULL;
 	m_numsamples = 0;
+	m_power = 0;
 }
 
 CPianoPlayer::~CPianoPlayer(void)

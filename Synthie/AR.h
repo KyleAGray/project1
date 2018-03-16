@@ -11,6 +11,10 @@ public:
 	void SetDuration(double d) { m_duration = d; }
 	void Start();
 	bool Generate();
+
+	void SetAttack(double a) { m_attack = a; }
+	void SetRelease(double r) { m_release = r; }
+
 private:
 	double m_attack;
 	double m_release;

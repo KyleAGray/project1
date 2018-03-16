@@ -18,9 +18,12 @@ public:
 	bool LoadFile();
 
 private:
+	CPiano * m_piano;
 	// all piano samples
-	std::vector<short> m_piano;
+	std::vector<short> m_pianosamples;
 	// vector contains all piano sample filename
 	std::vector<CString> files;
+	// how hard to press the key
+	double m_power;
 };
 
