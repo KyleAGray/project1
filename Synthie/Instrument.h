@@ -17,6 +17,6 @@ public:
 	void SetSend(int i, double ammount) { sends[i] = ammount; }
 private:
 	/// List of send ammounts for each effect
-	double sends[NUMEFFECTCHANNELS];	
+	double sends[NUMEFFECTCHANNELS] = { 1,0 };
 };
 
