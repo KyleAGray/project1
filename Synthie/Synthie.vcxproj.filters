@@ -90,6 +90,18 @@
     <ClCompile Include="EffectNoisGrate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DrumFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrumInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrumPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Drums.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -174,6 +186,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EffectNoisGrate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrumFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrumInstrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrumPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Drums.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

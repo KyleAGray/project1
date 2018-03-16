@@ -132,6 +132,10 @@
     <ClCompile Include="audio\DirSound.cpp" />
     <ClCompile Include="audio\DirSoundSource.cpp" />
     <ClCompile Include="audio\DirSoundStream.cpp" />
+    <ClCompile Include="DrumFactory.cpp" />
+    <ClCompile Include="DrumInstrument.cpp" />
+    <ClCompile Include="DrumPlayer.cpp" />
+    <ClCompile Include="Drums.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
     <ClCompile Include="Instrument.cpp" />
@@ -163,6 +167,10 @@
     <ClInclude Include="audio\DirSound.h" />
     <ClInclude Include="audio\DirSoundSource.h" />
     <ClInclude Include="audio\DirSoundStream.h" />
+    <ClInclude Include="DrumFactory.h" />
+    <ClInclude Include="DrumInstrument.h" />
+    <ClInclude Include="DrumPlayer.h" />
+    <ClInclude Include="Drums.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectNoisGrate.h" />
     <ClInclude Include="Instrument.h" />
