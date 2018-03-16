@@ -132,6 +132,7 @@ bool CSynthesizer::Generate(double * frame)
 		for (int c = 0; c < GetNumChannels(); c++)
 		{
 			channelFrames[i][c] = 0;
+			frame[c] = 0;
 		}
 	}
 
