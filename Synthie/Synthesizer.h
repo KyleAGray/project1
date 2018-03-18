@@ -5,6 +5,7 @@
 #include "Note.h"
 #include "EffectNoisGrate.h"
 #include "EfectCompression.h"
+#include "EffectChorus.h"
 #include "EffectFlange.h"
 #include "ReverbEffect.h"
 #include "DrumFactory.h"
@@ -79,8 +80,8 @@ private:
 	CEffectNoisGrate m_gate;
 	/// Compression effect
 	CEfectCompression m_compression;
-	/// Reverb effect
-	CReverbEffect m_reverb;
+	/// chorus effect
+	CEffectChorus  m_chorus;
 	/// Flange
 	CEffectFlange m_flange;
 	/// Instrument Facotries

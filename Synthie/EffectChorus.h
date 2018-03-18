@@ -1,8 +1,8 @@
 #pragma once
 #include "Effect.h"
 
-const int BUFFERSIZE = 100000;
-
+#define M_PI acos(-1.0)
+const int SIZE2 = 200000;
 class CEffectChorus :
 	public CEffect
 {
@@ -11,6 +11,13 @@ public:
 	virtual ~CEffectChorus();
 	virtual void Process(double *frame, double *eframe) override;
 
+private:
+	double delay = 1.0;
 
+	double queue[SIZE2] = {};
+
+
+	int wrloc = 0;
+
+	double time = 0;
 };
-
