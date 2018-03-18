@@ -9,7 +9,7 @@
 #include "CAdditive.h"
 #include <algorithm>
 #include <cmath>
-
+#include "Subtractive.h"
 
 
 CSynthesizer::CSynthesizer()
@@ -106,7 +106,10 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			instrument = new CAdditive();
 		}
-
+		else if (note->Instrument() == L"Subtractive")
+		{
+			instrument = new CSubtractive();
+		}
 		/// TODO
 		/// check if not is each of the effects
 

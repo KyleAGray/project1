@@ -6,10 +6,10 @@ namespace fs = std::experimental::filesystem;
 
 CPianoFactory::CPianoFactory()
 {
-	for (double time = 0; time<2; time += 1. / 44100.)
+	/*for (double time = 0; time<2; time += 1. / 44100.)
 	{
 		m_pianosamples.push_back(short(3267 * sin(2 * 3.1415 * 1000 * time)));
-	}
+	}*/
 
 	//m_power = 1;
 }
