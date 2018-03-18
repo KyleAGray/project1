@@ -187,9 +187,15 @@ bool CSynthesizer::Generate(double * frame)
 	double gateframe[2];
 	m_gate.Process(gateframe, channelFrames[1]);
 
+	double compressionframe[2];
+	m_compression.Process(compressionframe, channelFrames[2]);
+
+	double reverbframe[2];
+	m_reverb.Process(compressionframe, channelFrames[2]);
+
 	for (int c = 0; c < 2; c++)
 	{
-		frame[c] += gateframe[c] + channelFrames[0][c];
+		frame[c] += channelFrames[0][c] +  gateframe[c] + compressionframe[c] + reverbframe[c];
 	}
 	//
 	// Phase 4: Advance the time and beats
@@ -375,6 +381,11 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 			value.ChangeType(VT_R8);
 			effects[1] = value.dblVal;
 		}
+		else if (name == "compression")
+		{
+			value.ChangeType(VT_R8);
+			effects[2] = value.dblVal;
+		}
 		
 	}
 
@@ -405,24 +416,20 @@ void CSynthesizer::XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument)
 
 void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 {
-	//if (instrument == L"Piano")
-	//{
-	//	m_pianofactory.SetDry(effects[0]);
-	//	m_pianofactory.SetGateing(effects[1]);
-	//	// effect 2
-	//	// effect 3
-	//	// effect 4
 
-	//}
 	if (instrument == L"DrumInstrument")
 	{
 		m_drumfactory.SetDry(effects[0]);
 		m_drumfactory.SetGateing(effects[1]);
+		m_drumfactory.SetCompression(effects[2]);
+		m_drumfactory.SetReverb(effects[3]);
 	}
 	else if (instrument == L"ToneInstrument")
 	{
 		m_tonefactory.SetDry(effects[0]);
 		m_tonefactory.SetGateing(effects[1]);
+		m_drumfactory.SetCompression(effects[2]);
+		m_drumfactory.SetReverb(effects[3]);
 	}
-	/// TODO: ADD DRUM CAPABILITY
+	
 }

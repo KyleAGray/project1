@@ -4,6 +4,8 @@
 #include "Instrument.h"
 #include "Note.h"
 #include "EffectNoisGrate.h"
+#include "EfectCompression.h"
+#include "ReverbEffect.h"
 #include "DrumFactory.h"
 #include "ToneInstrumentFactory.h"
 
@@ -74,6 +76,10 @@ private:
 
 	/// Gate effect
 	CEffectNoisGrate m_gate;
+	/// Compression effect
+	CEfectCompression m_compression;
+	/// Reverb effect
+	CReverbEffect m_reverb;
 
 	/// Instrument Facotries
 	CDrumFactory m_drumfactory;

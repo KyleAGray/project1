@@ -19,14 +19,14 @@ void CEfectCompression::Process(double * frame, double * eframe)
 
 	if (eframe[0] > m_clip)
 	{
-		frame[0] = 0;
+		frame[0] = eframe[0] - 0.001;
 	}
 	else {
 		frame[0] = eframe[0];
 	}
 	if (eframe[1] > m_clip)
 	{
-		frame[1] = 0;
+		frame[1] = eframe[1] - 0.001;
 	}
 	else {
 		frame[1] = eframe[1];

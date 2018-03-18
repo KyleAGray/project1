@@ -140,6 +140,7 @@
     <ClCompile Include="Drums.cpp" />
     <ClCompile Include="EfectCompression.cpp" />
     <ClCompile Include="Effect.cpp" />
+    <ClCompile Include="EffectChorus.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
     <ClCompile Include="FilterEnvelope.cpp" />
     <ClCompile Include="Instrument.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="Notes.cpp" />
     <ClCompile Include="Progress.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
+    <ClCompile Include="ReverbEffect.cpp" />
     <ClCompile Include="SineWave.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -180,6 +182,7 @@
     <ClInclude Include="Drums.h" />
     <ClInclude Include="EfectCompression.h" />
     <ClInclude Include="Effect.h" />
+    <ClInclude Include="EffectChorus.h" />
     <ClInclude Include="EffectNoisGrate.h" />
     <ClInclude Include="FilterEnvelope.h" />
     <ClInclude Include="Instrument.h" />
@@ -189,6 +192,7 @@
     <ClInclude Include="Progress.h" />
     <ClInclude Include="ProgressDlg.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ReverbEffect.h" />
     <ClInclude Include="SineWave.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SubEnvenlope.h" />
