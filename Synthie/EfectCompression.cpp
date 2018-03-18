@@ -1,29 +1,30 @@
 #include "stdafx.h"
-#include "EffectNoisGrate.h"
+#include "EfectCompression.h"
 
 
-CEffectNoisGrate::CEffectNoisGrate()
+CEfectCompression::CEfectCompression()
 {
 }
 
 
-CEffectNoisGrate::~CEffectNoisGrate()
+CEfectCompression::~CEfectCompression()
 {
 }
+
 
 // reduce any sound below the threshold to 0
 // Takes in stereo sound frame array 
-void CEffectNoisGrate::Process(double * frame, double * eframe)
+void CEfectCompression::Process(double * frame, double * eframe)
 {
-	
-	if (eframe[0] < m_clip)
+
+	if (eframe[0] > m_clip)
 	{
 		frame[0] = 0;
 	}
 	else {
 		frame[0] = eframe[0];
 	}
-	if (eframe[1] < m_clip)
+	if (eframe[1] > m_clip)
 	{
 		frame[1] = 0;
 	}
@@ -31,6 +32,5 @@ void CEffectNoisGrate::Process(double * frame, double * eframe)
 		frame[1] = eframe[1];
 	}
 
-	
+
 }
- 

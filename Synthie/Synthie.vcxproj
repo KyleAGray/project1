@@ -138,6 +138,7 @@
     <ClCompile Include="DrumInstrument.cpp" />
     <ClCompile Include="DrumPlayer.cpp" />
     <ClCompile Include="Drums.cpp" />
+    <ClCompile Include="EfectCompression.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
     <ClCompile Include="Instrument.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="DrumInstrument.h" />
     <ClInclude Include="DrumPlayer.h" />
     <ClInclude Include="Drums.h" />
+    <ClInclude Include="EfectCompression.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectNoisGrate.h" />
     <ClInclude Include="Instrument.h" />
