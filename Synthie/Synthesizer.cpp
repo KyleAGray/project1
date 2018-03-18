@@ -194,7 +194,7 @@ bool CSynthesizer::Generate(double * frame)
 	//m_reverb.Process(reverbframe, channelFrames[3]);
 
 	double flangeframe[2];
-	m_reverb.Process(reverbframe, channelFrames[4]);
+	m_flange.Process(flangeframe, channelFrames[4]);
 
 	for (int c = 0; c < 2; c++)
 	{
