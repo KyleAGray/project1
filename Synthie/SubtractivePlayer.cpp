@@ -45,16 +45,16 @@ void CSubtractivePlayer::BuildTable()
 	if (m_freq > 1000. / 44100) {
 		ampFilter = 0.75;
 	}
-	else if (m_freq > 1200. / 44100) {
+	if (m_freq > 1200. / 44100) {
 		ampFilter = 0.6;
 	}
-	else if (m_freq > 1400. / 44100) {
+	if (m_freq > 1400. / 44100) {
 		ampFilter = 0.45;
 	}
 	
 	for (int i = 0; i < GetSampleRate(); i++, m_time += 1. / GetSampleRate())
 	{
-		double sample = 0.;
+		double sample = 0;
 
 		if (m_sweep == L"up")
 		{
@@ -81,37 +81,31 @@ void CSubtractivePlayer::BuildTable()
 			filterF += 440. / GetSampleRate();
 		}
 
-		if (m_waveform == L"sawtooth") {
-
-			//Initial sin wave
-			sample = ampFilter * m_amp * sin(m_time * 2 * PI * filterF);
-
-			//Add every harmonic up to nyqist frequency
-			for (double h = 2.0; h <= (GetSampleRate() / 2.0) / m_freq; h++) {
-				sample += (ampFilter * m_amp / h) * sin(m_time * 2 * PI  * filterF * h);
+		// add every odd harmonics up to nyquist frequency
+		if (m_waveform == L"square")
+		{
+			for (int j = 1; j < GetSampleRate() / (2 * m_freq); j += 2)
+			{
+				sample += ampFilter * m_amp / j * sin(m_time * 2 * PI * filterF * j);
 			}
 		}
-		else if (m_waveform == L"square") {
-			//Initial sin wave
-			sample = ampFilter * m_amp * sin(m_time * 2 * PI * filterF);
-
-			//Add every odd harmonic up to nyqist frequency
-			for (double h = 3.0; h <= (GetSampleRate() / 2.0) / m_freq; h++) {
-				if ((int)h % 2 == 1)
-					sample += (ampFilter * m_amp / h) * sin(m_time * 2 * PI  * filterF * h);
+		// add every harmonics upto nyquist frequency
+		else if (m_waveform == L"sawtooth")
+		{
+			for (int j = 1; j < GetSampleRate() / (2 * m_freq); j ++)
+			{
+				sample += ampFilter * m_amp / j * sin(m_time * 2 * PI * filterF * j);
 			}
 		}
-		else if (m_waveform == L"triangle") {
-			int alternatingSign = -1;
-			//Initial sin wave
-			sample = ampFilter * m_amp * sin(m_time * 2 * PI * filterF);
-
-			//Add every odd harmonic up to nyqist frequency
-			for (double h = 3.0; h <= (GetSampleRate() / 2.0) / m_freq; h++) {
-				if ((int)h % 2 == 1) {
-					sample += (alternatingSign * ampFilter * m_amp / (h*h)) * sin(m_time * 2 * PI  * filterF * h);
-					alternatingSign = -alternatingSign;
-				}
+		// add every odd harmonics up to nyquist frequency
+		else if (m_waveform == L"triangle")
+		{
+			int sign = -1;
+			for (int j = 1; j < GetSampleRate() / (2 * m_freq); j += 2)
+			{
+				//int n = 2 * j + 1;
+				sample += ampFilter * sign * m_amp / pow(j, 2) * sin(m_time * 2 * PI * filterF * j);
+				sign = -sign;
 			}
 		}
 
@@ -131,7 +125,7 @@ void CSubtractivePlayer::Reson(double* sample, int pos)
 	double R = 1.0 - (m_resonbw / 2.0);
 	double theta = acos((2 * R * cos(2 * PI * m_resonFreq)) / (1 + pow(R, 2)));
 	double A = (1 - pow(R, 2)) * sin(theta);
-	int first, second; // first: position - 1;
+	int first, second;
 
 	if (pos < 1)
 		first = m_wavetable.size() - 1;
