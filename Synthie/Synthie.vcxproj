@@ -141,13 +141,11 @@
     <ClCompile Include="EfectCompression.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
+    <ClCompile Include="FilterEnvelope.cpp" />
     <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="Notes.cpp" />
-    <ClCompile Include="Piano.cpp" />
-    <ClCompile Include="PianoFactory.cpp" />
-    <ClCompile Include="PianoPlayer.cpp" />
     <ClCompile Include="Progress.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
     <ClCompile Include="SineWave.cpp" />
@@ -155,6 +153,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SubEnvenlope.cpp" />
+    <ClCompile Include="Subtractive.cpp" />
+    <ClCompile Include="SubtractivePlayer.cpp" />
     <ClCompile Include="Synthesizer.cpp" />
     <ClCompile Include="Synthie.cpp" />
     <ClCompile Include="SynthieView.cpp" />
@@ -180,18 +181,19 @@
     <ClInclude Include="EfectCompression.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectNoisGrate.h" />
+    <ClInclude Include="FilterEnvelope.h" />
     <ClInclude Include="Instrument.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="Notes.h" />
-    <ClInclude Include="Piano.h" />
-    <ClInclude Include="PianoFactory.h" />
-    <ClInclude Include="PianoPlayer.h" />
     <ClInclude Include="Progress.h" />
     <ClInclude Include="ProgressDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SineWave.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SubEnvenlope.h" />
+    <ClInclude Include="Subtractive.h" />
+    <ClInclude Include="SubtractivePlayer.h" />
     <ClInclude Include="Synthesizer.h" />
     <ClInclude Include="Synthie.h" />
     <ClInclude Include="SynthieView.h" />

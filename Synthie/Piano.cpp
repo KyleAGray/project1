@@ -72,11 +72,11 @@ void CPiano::SetNote(CNote *note)
 
 bool CPiano::Generate()
 {
-	m_pianoPlayer.Generate();
+	//m_pianoPlayer.Generate();
 
-	bool valid = m_ar.Generate();
-	m_frame[0] = m_ar.Frame(0);
-	m_frame[1] = m_ar.Frame(1);
+	bool valid = m_pianoPlayer.Generate();
+	m_frame[0] = m_pianoPlayer.Frame(0);
+	m_frame[1] = m_frame[0];
 
 	m_time += GetSamplePeriod();
 	return valid;

@@ -3,7 +3,6 @@
 #include <vector>
 #include "Instrument.h"
 #include "Note.h"
-#include "PianoFactory.h"
 #include "EffectNoisGrate.h"
 #include "DrumFactory.h"
 #include "ToneInstrumentFactory.h"
@@ -77,7 +76,6 @@ private:
 	CEffectNoisGrate m_gate;
 
 	/// Instrument Facotries
-	CPianoFactory m_pianofactory;
 	CDrumFactory m_drumfactory;
 	CToneInstrumentFactory m_tonefactory;
 };
