@@ -386,7 +386,11 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 			value.ChangeType(VT_R8);
 			effects[2] = value.dblVal;
 		}
-		
+		else if (name == "reverb")
+		{
+			value.ChangeType(VT_R8);
+			effects[3] = value.dblVal;
+		}
 	}
 
 	SetEffects(instrument, effects);
