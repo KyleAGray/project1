@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<score bpm="60" beatspermeasure="4">
+   <instrument instrument="Additive">
+      <note measure="1" beat="1" duration=".5" note=".3 .1 .05 0 0 0 0 0" frequency="200" vibrato="0 0" crossfade=".3 .2 0 0 0 0 0 0"/>
+      <note measure="1" beat="1.5" duration=".5" note=".4 0 0 0 0 0 0 0" frequency="300" vibrato="0 0" crossfade=".3 .2 0 0 0 0 0 0"/>
+      <note measure="1" beat="2" duration=".5" note=".3 .1 .05 0 0 0 0 0" frequency="200" vibrato="0 0" crossfade=".3 .2 0 0 0 0 0 0"/>
+      <note measure="1" beat="2.5" duration=".5" note=".4 0 0 0 0 0 0 0" frequency="300" vibrato="0 0" crossfade=".3 .2 0 0 0 0 0 0"/>
+      <note measure="1" beat="3" duration="1" note=".4 .3 .2 .1 .05 .25 .125 .0625" frequency="200" vibrato="0 0" crossfade=".3 .2 0 0 0 0 0 0"/>
+      <note measure="1" beat="4" duration="1" note=".4 0 0 0 0 0 0 0" frequency="300" vibrato="0 0" crossfade=".7 .2 0 0 0 0 0 0"/>
+      <note measure="2" beat="1" duration="3.25" note=".4 .2 .1 .05 .01 0 0 0" frequency="400" vibrato="0 0" crossfade="0 0 0 0 0 0 0 0"/>
+      <note measure="2" beat="4" duration="1" note=".3 .3 .2 .1 0 0 0 0" frequency="330" vibrato="0 0" crossfade=".3 .3 .2 .1 0 0 0 0"/>
+      <note measure="3" beat="1.25" duration="3.5" note=".3 .1 0 0 0 0 0 0" frequency="300" vibrato="0 0" crossfade="0 0 0 0 0 0 0 0"/>
+      <note measure="3" beat="1.25" duration="3.75" note=".3 .1 0 0 0 0 0 0" frequency="400" vibrato="0 0" crossfade="0 0 0 0 0 0 0 0"/>
+      <note measure="4" beat="1" duration="3.2" note="0 0 0 0 0 0 0 0" frequency="400" vibrato=".3 10" crossfade=".3 .1 0 0 0 0 0 0"/>
+   </instrument>
+</score>
