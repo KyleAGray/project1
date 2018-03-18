@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<score bpm="60" beatspermeasure="4">
+	
+	<instrument instrument="Subtractive">
+        
+		<note measure="1" beat="1" duration="5" note="C4" waveform="square" reson="0.01134" bandwidth="0.3" sweep="down"/>
+
+                <note measure="1.1" beat="1" duration="0.5" note="G4" waveform="sawtooth" reson="0.01134" bandwidth="0.3" sweep="up"/>
+
+	
+  	<note measure="2.5" beat="1" duration="5" note="G2" waveform="square" reson="0.01134" bandwidth="0.25" sweep="down-up"/>
+
+		<note measure="2.2" beat="1" duration="0.5" note="C4" waveform="triangle" reson="0.01134" bandwidth="0.3" sweep="up-down"/>
+	   
+   
+          	<note measure="3.2" beat="1" duration="5" note="E5" waveform="square" reson="0.01134" bandwidth="0.4" sweep="up"/>
+                <note measure="3.3" beat="1" duration="0.5" note="E5" waveform="triangle" reson="0.01134" bandwidth="0.4" sweep="down"/>
+     
+	
+	  	<note measure="4" beat="1" duration="5" note="G#4" waveform="triangle" reson="0.009" bandwidth="0.025" sweep="down"/>
+                <note measure="4.7" beat="1" duration="5" note="A#4" waveform="sawtooth" reson="0.01234" bandwidth="0.03" sweep="down-up"/>
+	
+        
+          	<note measure="5.5" beat="1" duration="2" note="A3" waveform="sawtooth" reson="0.01" bandwidth="0.3"/>
+	
+                <note measure="6" beat="1" duration="2" note="D5" waveform="square" reson="0.01" bandwidth="0.3"/>
+	
+		<note measure="6" beat="1" duration="1" note="F5" waveform="square" reson="0.01134" bandwidth="0.4" sweep="up-down"/>
+                <note measure="6.5" beat="1" duration="5" note="C#4" waveform="square" reson="0.01134" bandwidth="0.3" sweep="up-down"/>
+
+                <note measure="7" beat="1" duration="1" note="G4" waveform="sawtooth" reson="0.01134" bandwidth="0.3" sweep="down"/>
+
+	
+  	<note measure="7.1" beat="1" duration="5" note="F2" waveform="square" reson="0.01134" bandwidth="0.25" sweep="down-up"/>
+ 	</instrument>
+
+</score>

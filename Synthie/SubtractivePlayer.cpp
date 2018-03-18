@@ -46,10 +46,10 @@ void CSubtractivePlayer::BuildTable()
 		ampFilter = 0.75;
 	}
 	if (m_freq > 1200. / 44100) {
-		ampFilter = 0.6;
+		ampFilter = 0.66;
 	}
 	if (m_freq > 1400. / 44100) {
-		ampFilter = 0.45;
+		ampFilter = 0.42;
 	}
 	
 	for (int i = 0; i < GetSampleRate(); i++, m_time += 1. / GetSampleRate())
@@ -131,7 +131,7 @@ void CSubtractivePlayer::Reson(double* sample, int pos)
 		first = m_wavetable.size() - 1;
 	else
 		first = pos - 1;
-	if (pos - 2 < 0)
+	if (pos < 2)
 		second = m_wavetable.size() - 1;
 	else
 		second = pos - 2;

@@ -12,6 +12,7 @@ public:
 
 	void SetSource(CAudioNode *source) { m_source = source; }
 	void SetDuration(double d) { m_duration = d; }
+
 	void SetAttack(double a) { m_attack = a; }
 	void SetDecay(double d) { m_decay = d;}
 	void SetSustain(double s) { m_sustain = s; }

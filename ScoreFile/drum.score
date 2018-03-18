@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<score bpm="120" beatspermeasure="2">
+     <instrument instrument="DrumInstrument">
+          <note measure="1" beat="1" duration="0.25" note="G#4" kit="1"/>
+          <note measure="2" beat="1" duration="0.25" note="B3" kit="2"/>
+       
+          <note measure="3" beat="1" kit="3" filt="2"/>
+          <note measure="3" beat="2" kit="4" filt="2"/>
+          <note measure="4" beat="1" kit="5" filt="2"/>
+
+          <note measure="5" beat="1" kit="6" filt="2"/>
+          <note measure="5" beat="1.5" kit="7" filt="2"/>
+          <note measure="5" beat="2" kit="8" filt="2"/>
+          <note measure="5" beat="2.5" kit="9" filt="2"/>
+
+          <note measure="6" beat="1" kit="10" filt="2"/>
+          <note measure="6" beat="2" kit="11" filt="2"/>
+       
+          <note measure="7" beat="1" kit="12" filt="2"/>
+          <note measure="8" beat="1" kit="13" filt="2"/>
+          <note measure="9" beat="1" kit="14" filt="2"/>
+          <note measure="10" beat="1" kit="15" filt="2"/>
+          <note measure="11" beat="1" kit="16" filt="2"/>
+          <note measure="12" beat="1" kit="17" filt="2"/>
+          <note measure="13" beat="1" kit="18" filt="2"/>
+          <note measure="14" beat="1" kit="19" filt="2"/>
+     </instrument>
+</score>

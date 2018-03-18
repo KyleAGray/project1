@@ -20,9 +20,6 @@ CSynthesizer::CSynthesizer()
 	m_sampleRate = 44100.;
 	m_samplePeriod = 1 / m_sampleRate;
 
-	/// Load all piano samples to the file
-	m_pianofactory.LoadFile();
-
 	m_drumfactory.LoadFile("Drums/step_snare.wav", 3);
 	m_drumfactory.LoadFile("Drums/alien_hihats_01.wav", 4);
 	m_drumfactory.LoadFile("Drums/alien_hihats_02.wav", 5);
@@ -91,12 +88,7 @@ bool CSynthesizer::Generate(double * frame)
 			//instrument = new CToneInstrument();
 			instrument = m_tonefactory.CreateInstrument();
 		}
-		// Create the piano instrument
-		else if (note->Instrument() == L"Piano")
-		{
-			m_pianofactory.SetNote(note);
-			instrument = m_pianofactory.CreateInstrument();
-		}
+		
 		else if (note->Instrument() == L"DrumInstrument")
 		{
 			m_drumfactory.SetNote(note);
@@ -413,16 +405,16 @@ void CSynthesizer::XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument)
 
 void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 {
-	if (instrument == L"Piano")
-	{
-		m_pianofactory.SetDry(effects[0]);
-		m_pianofactory.SetGateing(effects[1]);
-		// effect 2
-		// effect 3
-		// effect 4
+	//if (instrument == L"Piano")
+	//{
+	//	m_pianofactory.SetDry(effects[0]);
+	//	m_pianofactory.SetGateing(effects[1]);
+	//	// effect 2
+	//	// effect 3
+	//	// effect 4
 
-	}
-	else if (instrument == L"DrumInstrument")
+	//}
+	if (instrument == L"DrumInstrument")
 	{
 		m_drumfactory.SetDry(effects[0]);
 		m_drumfactory.SetGateing(effects[1]);

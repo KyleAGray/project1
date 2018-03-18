@@ -8,7 +8,6 @@ CSubEnvenlope::CSubEnvenlope()
 	m_decay = 0.;
 	m_sustain = 1.;
 	m_release = 0.05;
-	m_time = 0;
 }
 
 
@@ -19,6 +18,7 @@ CSubEnvenlope::~CSubEnvenlope()
 void CSubEnvenlope::Start()
 {
 	m_time = 0.;
+	m_envelope = 1.;
 }
 
 bool CSubEnvenlope::Generate()

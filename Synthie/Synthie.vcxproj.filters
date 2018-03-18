@@ -30,9 +30,6 @@
     <ClCompile Include="Notes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Progress.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ProgressDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,15 +72,6 @@
     <ClCompile Include="AR.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PianoPlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Piano.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PianoFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Effect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -121,6 +109,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FilterEnvelope.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Progress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -192,15 +183,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PianoPlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Piano.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PianoFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Effect.h">

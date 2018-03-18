@@ -19,11 +19,9 @@ public:
 protected:
 	// source of the audio node
 	CAudioNode * m_source;
-	// envelope object
+	// envelope object pointer
 	CSubEnvenlope* m_envelope;
-	// audio duration
 	double m_duration;
-	// keep track of time
 	double m_time;
 };
 
