@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "EffectNoisGrate.h"
-
-
+#include <cmath>
+using namespace std;
 CEffectNoisGrate::CEffectNoisGrate()
 {
 }
@@ -16,14 +16,16 @@ CEffectNoisGrate::~CEffectNoisGrate()
 void CEffectNoisGrate::Process(double * frame, double * eframe)
 {
 	
-	if (eframe[0] < m_clip)
+
+
+	if (abs(eframe[0]) < m_clip)
 	{
 		frame[0] = 0;
 	}
 	else {
 		frame[0] = eframe[0];
 	}
-	if (eframe[1] < m_clip)
+	if (abs(eframe[1]) < m_clip)
 	{
 		frame[1] = 0;
 	}
