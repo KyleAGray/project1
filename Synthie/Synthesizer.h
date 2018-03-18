@@ -10,6 +10,8 @@
 #include "ReverbEffect.h"
 #include "DrumFactory.h"
 #include "ToneInstrumentFactory.h"
+#include "AdditiveFactory.h"
+#include "SubtractiveFactory.h"
 
 using namespace std;
 
@@ -87,5 +89,9 @@ private:
 	/// Instrument Facotries
 	CDrumFactory m_drumfactory;
 	CToneInstrumentFactory m_tonefactory;
+
+	CAdditiveFactory m_addfactory;
+
+	CSubtractiveFactory m_subfactory;
 };
 

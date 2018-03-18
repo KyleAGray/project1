@@ -38,6 +38,8 @@
     <ClCompile Include="EffectChorus.cpp" />
     <ClCompile Include="ReverbEffect.cpp" />
     <ClCompile Include="EffectFlange.cpp" />
+    <ClCompile Include="AdditiveFactory.cpp" />
+    <ClCompile Include="SubtractiveFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\xmlhelp.h" />
@@ -80,6 +82,8 @@
     <ClInclude Include="EffectChorus.h" />
     <ClInclude Include="ReverbEffect.h" />
     <ClInclude Include="EffectFlange.h" />
+    <ClInclude Include="AdditiveFactory.h" />
+    <ClInclude Include="SubtractiveFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc" />

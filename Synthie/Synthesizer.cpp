@@ -96,11 +96,11 @@ bool CSynthesizer::Generate(double * frame)
 		}
 		else if (note->Instrument() == L"Additive")
 		{
-			instrument = new CAdditive();
+			instrument = m_addfactory.CreateInstrument();
 		}
 		else if (note->Instrument() == L"Subtractive")
 		{
-			instrument = new CSubtractive();
+			instrument = m_subfactory.CreateInstrument();
 		}
 		/// TODO
 		/// check if not is each of the effects
@@ -434,7 +434,8 @@ void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 		m_drumfactory.SetDry(effects[0]);
 		m_drumfactory.SetGateing(effects[1]);
 		m_drumfactory.SetCompression(effects[2]);
-		m_drumfactory.SetReverb(effects[3]);
+		m_drumfactory.SetChorus(effects[3]);
+		m_drumfactory.SetFlange(effects[4]);
 	}
 	else if (instrument == L"ToneInstrument")
 	{
@@ -442,7 +443,25 @@ void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 		m_tonefactory.SetGateing(effects[1]);
 		m_tonefactory.SetCompression(effects[2]);
 		m_tonefactory.SetChorus(effects[3]);
-		m_tonefactory.SetFlange(effects[3]);
+		m_tonefactory.SetFlange(effects[4]);
+	}
+	else if (instrument == L"Additive")
+	{
+		m_addfactory.SetDry(effects[0]);
+		m_addfactory.SetGateing(effects[1]);
+		m_addfactory.SetCompression(effects[2]);
+		m_addfactory.SetChorus(effects[3]);
+		m_addfactory.SetFlange(effects[4]);
+
+	}
+	else if (instrument == L"Subtractive")
+	{
+		m_subfactory.SetDry(effects[0]);
+		m_subfactory.SetGateing(effects[1]);
+		m_subfactory.SetCompression(effects[2]);
+		m_subfactory.SetChorus(effects[3]);
+		m_subfactory.SetFlange(effects[4]);
+
 	}
 	
 }

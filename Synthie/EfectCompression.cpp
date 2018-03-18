@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "EfectCompression.h"
-
+#include <cmath>
 
 CEfectCompression::CEfectCompression()
 {
@@ -17,16 +17,25 @@ CEfectCompression::~CEfectCompression()
 void CEfectCompression::Process(double * frame, double * eframe)
 {
 
-	if (eframe[0] > m_clip)
+	if (eframe[0] > m_clip && eframe[0] > 0)
 	{
 		frame[0] = eframe[0] - 0.001;
+	}
+	else if (abs(eframe[0]) < m_clip && abs(eframe[0]) < 0)
+	{
+		frame[0] = eframe[0] + 0.001;
 	}
 	else {
 		frame[0] = eframe[0];
 	}
-	if (eframe[1] > m_clip)
+	
+	if (eframe[1] > m_clip && eframe[1] > 0)
 	{
 		frame[1] = eframe[1] - 0.001;
+	}
+	else if (abs(eframe[1]) < m_clip && abs(eframe[0]) < 0)
+	{
+		frame[0] = eframe[1] + 0.001;
 	}
 	else {
 		frame[1] = eframe[1];
