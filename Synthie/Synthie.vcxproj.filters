@@ -37,6 +37,7 @@
     <ClCompile Include="ToneInstrumentFactory.cpp" />
     <ClCompile Include="EffectChorus.cpp" />
     <ClCompile Include="ReverbEffect.cpp" />
+    <ClCompile Include="EffectFlange.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\xmlhelp.h" />
@@ -78,6 +79,7 @@
     <ClInclude Include="ToneInstrumentFactory.h" />
     <ClInclude Include="EffectChorus.h" />
     <ClInclude Include="ReverbEffect.h" />
+    <ClInclude Include="EffectFlange.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Synthie.rc" />

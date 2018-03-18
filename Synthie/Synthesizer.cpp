@@ -191,11 +191,14 @@ bool CSynthesizer::Generate(double * frame)
 	m_compression.Process(compressionframe, channelFrames[2]);
 
 	double reverbframe[2];
-	m_reverb.Process(compressionframe, channelFrames[2]);
+	//m_reverb.Process(reverbframe, channelFrames[3]);
+
+	double flangeframe[2];
+	m_reverb.Process(reverbframe, channelFrames[4]);
 
 	for (int c = 0; c < 2; c++)
 	{
-		frame[c] += channelFrames[0][c] +  gateframe[c] + compressionframe[c] + reverbframe[c];
+		frame[c] += channelFrames[0][c] +  gateframe[c] + compressionframe[c] + flangeframe[c];
 	}
 	//
 	// Phase 4: Advance the time and beats
@@ -351,7 +354,7 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 	long len;
 	attributes->get_length(&len);
 
-	double effects[NUMEFFECTCHANNELS] = { 1,0 };
+	double effects[NUMEFFECTCHANNELS] = { 1,0,0,0 };
 	// Loop over the list of attributes
 	for (int i = 0; i<len; i++)
 	{
@@ -390,6 +393,11 @@ void CSynthesizer::XmlLoadInstrument(IXMLDOMNode * xml)
 		{
 			value.ChangeType(VT_R8);
 			effects[3] = value.dblVal;
+		}
+		else if (name == "flange")
+		{
+			value.ChangeType(VT_R8);
+			effects[4] = value.dblVal;
 		}
 	}
 
@@ -432,8 +440,9 @@ void CSynthesizer::SetEffects(std::wstring & instrument, double * effects)
 	{
 		m_tonefactory.SetDry(effects[0]);
 		m_tonefactory.SetGateing(effects[1]);
-		m_drumfactory.SetCompression(effects[2]);
-		m_drumfactory.SetReverb(effects[3]);
+		m_tonefactory.SetCompression(effects[2]);
+		m_tonefactory.SetReverb(effects[3]);
+		m_tonefactory.SetFlange(effects[3]);
 	}
 	
 }

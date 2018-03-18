@@ -141,6 +141,7 @@
     <ClCompile Include="EfectCompression.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectChorus.cpp" />
+    <ClCompile Include="EffectFlange.cpp" />
     <ClCompile Include="EffectNoisGrate.cpp" />
     <ClCompile Include="FilterEnvelope.cpp" />
     <ClCompile Include="Instrument.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="EfectCompression.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectChorus.h" />
+    <ClInclude Include="EffectFlange.h" />
     <ClInclude Include="EffectNoisGrate.h" />
     <ClInclude Include="FilterEnvelope.h" />
     <ClInclude Include="Instrument.h" />

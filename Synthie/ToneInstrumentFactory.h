@@ -11,6 +11,7 @@ public:
 	void SetGateing(double g) { m_gateing = g; }
 	void SetCompression(double c) { m_compression = c; }
 	void SetReverb(double r) { m_reverb = r; }
+	void SetFlange(double r) { m_flange = r; }
 
 
 	CToneInstrument *CreateInstrument();
@@ -20,5 +21,6 @@ private:
 	double m_gateing = 0;
 	double m_compression = 0;
 	double m_reverb = 0;
+	double m_flange = 0;
 };
 
