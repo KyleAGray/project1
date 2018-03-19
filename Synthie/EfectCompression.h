@@ -9,6 +9,6 @@ public:
 	virtual void Process(double *frame, double *eframe) override;
 
 private:
-	double m_clip = 0.005;
+	double m_clip = 0.05;
 };
 

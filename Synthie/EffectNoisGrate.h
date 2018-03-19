@@ -12,6 +12,6 @@ public:
 private:
 	/// The threshold for allowing a sound to pass through
 	/// 100 seemed to work well for aliminating noise in the overture wav file from step 4.
-	double m_clip = 0.003;
+	double m_clip = 0.02;
 };
 
